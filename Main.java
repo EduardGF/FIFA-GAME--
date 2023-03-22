@@ -2,6 +2,39 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("Menú principal:");
+            System.out.println("1. Elegir equipos");
+            System.out.println("2. Jugar partidos");
+            System.out.println("3. Salir");
+            System.out.print("Ingrese la opción que desea: ");
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    mostrarFormacion(scanner);
+                    break;
+                case 2:
+                    System.out.println("Ingrese el número de rondas de penaltis:");
+                    int numRondas = scanner.nextInt();
+                    PenaltyShootout.chutePenaltis(numRondas);
+                    break;
+                case 3:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Por favor, ingrese una opción válida.");
+                    break;
+            }
+        } while (opcion != 3);
+
+    }
+
+    public static void mostrarFormacion(Scanner scanner) {
         // Crear matriz de equipos (Champions League)
         String[][] equipos = new String[19][11]; // 32 equipos con 11 jugadores cada uno
 
@@ -17,8 +50,6 @@ public class Main {
                 equipos[i][j] = nombresJugadores[j] + " (Equipo " + (i + 1) + ")";
             }
         }
-
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Bienvenido a la simulación del FIFA!");
 
         // Ingresar nombre y apellido del árbitro
@@ -38,20 +69,14 @@ public class Main {
 
         // Mostrar información del equipo seleccionado y el árbitro
         System.out.println("Equipo seleccionado: " + nombresEquipos[equipoSeleccionado - 1]);
-        System.out.println("Jugadores:");
-        for (int i = 0; i < 11; i++) {
-            System.out.println("Jugador " + (i + 1) + ": " + equipos[equipoSeleccionado - 1][i]);
-        }
         System.out.println("Árbitro: " + arbitro);
 
         // Mostrar la formación del equipo en formato ASCII
         System.out.println("\nFormación 4-4-2:");
-        System.out.println("       " + equipos[equipoSeleccionado - 1][0]+" Portero" ); //
-        System.out.println(" " + equipos[equipoSeleccionado - 1][1] + " 1" + equipos[equipoSeleccionado - 1][2] + " " + equipos[equipoSeleccionado - 1][3] + " " + equipos[equipoSeleccionado - 1][4]); // Defensores
-        System.out.println(equipos[equipoSeleccionado - 1][5] + " " + equipos[equipoSeleccionado - 1][6] + " " + equipos[equipoSeleccionado - 1][7] + " " + equipos[equipoSeleccionado - 1][8]); // Centrocampistas
-        System.out.println("   " + equipos[equipoSeleccionado - 1][9] + " " + equipos[equipoSeleccionado - 1][10]); // Delanteros
+        System.out.println("       👤 " + " Portero"); //
+        System.out.println(" 👤 " + " Central 👤 " + " Defensa 👤 " + " Defensa 👤 " + " Central"); // Defensores
+        System.out.println("👤 " + " Lateral 👤 " + " Migcampista 👤 " + " Migcampista 👤 " + " Lateral"); // Centrocampistas
+        System.out.println("   👤 " + " Delanter 👤 " + " Delanter"); // Delanteros
 
-        scanner.close();
     }
 }
-
