@@ -1,6 +1,6 @@
 # FIFA-GAME ⚽
-![image](https://user-images.githubusercontent.com/121028824/226970317-a0eb6926-34f5-4d98-88e0-ca3e5695c477.png) Título: Penalty Shootout
-
+Título: Penalty Shootout
+________________________________________________________________________________________________________________________________________________________________________
 Descripción: Penalty Shootout es un emocionante videojuego de fútbol que se centra en la tensión y habilidad que requieren los lanzamientos de penaltis. En este juego, los jugadores pueden elegir entre una amplia variedad de equipos de fútbol de la liga santander, cada uno con sus propias características, habilidades y formaciones tácticas. El objetivo del juego es enfrentarte en rondas de penaltis.
 
 Características principales:
